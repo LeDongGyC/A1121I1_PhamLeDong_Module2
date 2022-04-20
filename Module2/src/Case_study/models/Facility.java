@@ -3,13 +3,13 @@ package Case_study.models;
 import java.util.Objects;
 
 public abstract class Facility {
-    private String maDichvu = "";
+    private String maDichvu;
     private String tenDichvu = "";
     private double dienTichSuDung = 0;
     private double chiPhiThue = 0;
     private int soNguoiToiDa = 0;
     private String kieuThue = "";
-
+    final String SEPARATION = ",";
     public Facility() {
     }
 
@@ -72,14 +72,14 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "maDichvu='" + maDichvu + '\'' +
-                ", tenDichvu='" + tenDichvu + '\'' +
-                ", dienTichSuDung=" + dienTichSuDung +
-                ", chiPhiThue=" + chiPhiThue +
-                ", soNguoiToiDa=" + soNguoiToiDa +
-                ", kieuThue='" + kieuThue + '\'' +
-                '}';
+        return "Facility: " +
+                "mã dịch vụ: " + maDichvu +
+                ", tên dịch vụ: " + tenDichvu +
+                ", diện tích sử dụng: " + dienTichSuDung +
+                ", chi phí thuê: " + chiPhiThue +
+                ", số người tối đa: " + soNguoiToiDa +
+                ", kiểu thuê: " + kieuThue
+                ;
     }
 
     @Override
@@ -98,5 +98,9 @@ public abstract class Facility {
     @Override
     public int hashCode() {
         return Objects.hash(maDichvu, tenDichvu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue);
+    }
+
+    public String toCSV(){
+        return this.maDichvu + SEPARATION + this.tenDichvu + SEPARATION + this.dienTichSuDung + SEPARATION + this.chiPhiThue + SEPARATION + this.soNguoiToiDa + SEPARATION + this.kieuThue;
     }
 }

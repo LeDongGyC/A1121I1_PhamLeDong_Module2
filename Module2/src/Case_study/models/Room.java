@@ -6,10 +6,6 @@ public class Room extends Facility {
     public Room() {
     }
 
-    public Room(String dichVuMienPhi) {
-        this.dichVuMienPhi = dichVuMienPhi;
-    }
-
     public Room(String maDichvu, String tenDichvu, double dienTichSuDung, double chiPhiThue, int soNguoiToiDa, String kieuThue, String dichVuMienPhi) {
         super(maDichvu, tenDichvu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue);
         this.dichVuMienPhi = dichVuMienPhi;
@@ -25,8 +21,8 @@ public class Room extends Facility {
 
     @Override
     public String toString() {
-        return "Room{" + super.toString() +
-                "dichVuMienPhi='" + dichVuMienPhi + '\'' +
-                '}';
+        return "Room: " + super.toString() +
+                "dịch vụ miễn phí đi kèm: " + dichVuMienPhi
+                ;
     }
 }

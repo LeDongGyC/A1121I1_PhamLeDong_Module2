@@ -1,24 +1,26 @@
 package Case_study.models;
 
-public class Customer extends Person{
-    private String maKH = "";
-    private String loaiKH = "";
-    private String address = "";
+public class Customer extends Person {
+    private String maKH;
+    private String loaiKH;
+    private String diaChi;
+    final String SEPARATION = ",";
 
-    public Customer(){
-    }
-
-    public Customer(String maKH, String loaiKH, String address) {
+    public Customer(String maKH, String loaiKH, String diaChi) {
         this.maKH = maKH;
         this.loaiKH = loaiKH;
-        this.address = address;
+        this.diaChi = diaChi;
     }
 
-    public Customer(String maNV, String hoTen, String ngaySinh, String gioiTinh, String soCMND, String email, String maKH, String loaiKH, String address) {
-        super(maNV, hoTen, ngaySinh, gioiTinh, soCMND, email);
+    public Customer() {
+    }
+
+
+    public Customer(String hoTen, String ngaySinh, String gioiTinh, String soCMND, String email, String soDT, String maKH, String loaiKH, String diaChi) {
+        super(hoTen, ngaySinh, gioiTinh, soCMND, soDT, email);
         this.maKH = maKH;
         this.loaiKH = loaiKH;
-        this.address = address;
+        this.diaChi = diaChi;
     }
 
     public String getMaKH() {
@@ -37,19 +39,23 @@ public class Customer extends Person{
         this.loaiKH = loaiKH;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 
     @Override
     public String toString() {
         return "Customer: " + super.toString() +
-                "maKH='" + maKH  +
-                ", loaiKH='" + loaiKH +
-                ", address='" + address ;
+                ", mã khách hàng: " + maKH +
+                ", loại khách hàng: " + loaiKH +
+                ", địa chỉ: " + diaChi;
+    }
+
+    public String toCustomerCSV(){
+        return this.maKH + SEPARATION + this.loaiKH + SEPARATION + this.diaChi + SEPARATION + super.toCSV();
     }
 }

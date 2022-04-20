@@ -4,6 +4,7 @@ import Case_study.controllers.FuramaController;
 
 public class Main {
     public static void main(String[] args) {
-        FuramaController f = new FuramaController();
+        FuramaController furamaController = new FuramaController();
+        furamaController.disPlayMenu();
     }
 }

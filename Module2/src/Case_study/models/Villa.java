@@ -4,7 +4,7 @@ public class Villa extends Facility {
     private String tieuChuanPhong = "";
     private double dienTichHoBoi = 0;
     private int soTang = 0;
-
+    final String SEPARATION = ",";
     public Villa() {
     }
 
@@ -41,10 +41,14 @@ public class Villa extends Facility {
 
     @Override
     public String toString() {
-        return "Villa{" + super.toString() +
-                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
-                ", dienTichHoBoi=" + dienTichHoBoi +
-                ", soTang=" + soTang +
-                '}';
+        return "Villa: " + super.toString() +
+                "tiêu chuẩn phòng: " + tieuChuanPhong +
+                ", diện tích hồ bơi: " + dienTichHoBoi +
+                ", số tầng: " + soTang
+                ;
+    }
+
+    public String toVillaCSV(){
+        return super.toCSV() + SEPARATION + this.tieuChuanPhong + SEPARATION + this.dienTichHoBoi + SEPARATION + this.soTang;
     }
 }

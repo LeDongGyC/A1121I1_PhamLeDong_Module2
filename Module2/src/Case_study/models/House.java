@@ -6,11 +6,6 @@ public class House extends Facility {
 
     public House(){};
 
-    public House(String tieuChuanPhong, int soTang) {
-        this.tieuChuanPhong = tieuChuanPhong;
-        this.soTang = soTang;
-    }
-
     public House(String maDichvu, String tenDichvu, double dienTichSuDung, double chiPhiThue, int soNguoiToiDa, String kieuThue, String tieuChuanPhong, int soTang) {
         super(maDichvu, tenDichvu, dienTichSuDung, chiPhiThue, soNguoiToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
@@ -35,9 +30,9 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" + super.toString() +
-                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
-                ", soTang=" + soTang +
-                '}';
+        return "House: " + super.toString() +
+                "tiêu chuẩn phòng: " + tieuChuanPhong +
+                ", số tầng: " + soTang
+                ;
     }
 }

@@ -1,30 +1,30 @@
 package Case_study.models;
 
 public abstract class Person {
-    private String maNV = "";
-    private String hoTen = "";
-    private String ngaySinh = "";
-    private String gioiTinh = "";
-    private String soCMND = "";
-    private String email = "";
-
+    private String hoTen ;
+    private String ngaySinh;
+    private String gioiTinh;
+    private String soCMND;
+    private String soDT;
+    private String email;
+    final String SEPARATION = ",";
     public Person(){}
 
-    public Person(String maNV, String hoTen, String ngaySinh, String gioiTinh, String soCMND, String email) {
-        this.maNV = maNV;
+    public String getSoDT() {
+        return soDT;
+    }
+
+    public void setSoDT(String soDT) {
+        this.soDT = soDT;
+    }
+
+    public Person(String hoTen, String ngaySinh, String gioiTinh, String soCMND, String soDT, String email) {
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
         this.soCMND = soCMND;
+        this.soDT = soDT;
         this.email = email;
-    }
-
-    public String getMaNV() {
-        return maNV;
-    }
-
-    public void setMaNV(String maNV) {
-        this.maNV = maNV;
     }
 
     public String getHoTen() {
@@ -69,13 +69,16 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person:" +
-                "maNV='" + maNV + ',' +
-                ", hoTen='" + hoTen + ',' +
-                ", ngaySinh='" + ngaySinh + ',' +
-                ", gioiTinh='" + gioiTinh + ',' +
-                ", soCMND='" + soCMND + ',' +
-                ", email='" + email + ','
+        return "họ tên: " + hoTen +
+                ",ngày sinh: " + ngaySinh +
+                ",giới tính: " + gioiTinh +
+                ",số CMND: " + soCMND +
+                ",số ĐT: " + soDT +
+                ",Email: " + email
                 ;
+    }
+
+    public String toCSV(){
+        return this.hoTen + SEPARATION + this.ngaySinh + SEPARATION + this.gioiTinh + SEPARATION + this.soCMND + SEPARATION + this.soDT + SEPARATION + this.email;
     }
 }

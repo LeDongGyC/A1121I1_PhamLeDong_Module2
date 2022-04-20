@@ -8,13 +8,14 @@ public class ContactServiceImpl implements ContactService {
 
     }
 
+
     @Override
-    public void del() {
+    public void display() {
 
     }
 
     @Override
-    public void display() {
+    public void edit() {
 
     }
 }
